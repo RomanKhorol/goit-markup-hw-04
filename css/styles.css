@@ -9,6 +9,8 @@
   --logo-color: #000000;
   --portfolio-photo-back-color: #eeeeee;
   --border-bc: #ececec;
+  --icon-fill: #afb1b8;
+  --section-client: #f5f5f5;
 }
 
 body {
@@ -124,6 +126,8 @@ img {
 /* contacts */
 
 .cont-item {
+  display: flex;
+  align-items: center;
   color: var(--primery-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -135,7 +139,13 @@ img {
 .cont-item:focus {
   color: var(--accent-color);
 }
+
+.cont-list-pict {
+  margin-right: 10px;
+  fill: currentColor;
+}
 .cont-list {
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
@@ -151,6 +161,15 @@ img {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../css/Img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-head {
@@ -200,6 +219,23 @@ img {
 
 .task-item {
   width: 270px;
+}
+
+.task-pic {
+  margin-top: 0;
+  margin-bottom: 30px;
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--back-team-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-fill);
+}
+
+.task-list-pict {
+  margin: 25px 100px;
 }
 
 .details,
@@ -292,6 +328,7 @@ img {
 .team-item {
   background-color: var(--hero-color);
   width: calc((100% - 60px) / 4);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .pd,
 .fd,
@@ -319,6 +356,74 @@ img {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+}
+
+.soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 30px 32px;
+}
+
+.soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--hero-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-fill);
+}
+
+.soc-list-pict {
+  margin: 12px;
+  fill: currentColor;
+}
+
+.soc-link:hover,
+.soc-link:focus {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+
+/* Наши клиенты */
+
+.client {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: var(--section-client);
+}
+.client-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 0;
+  margin-bottom: 0%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.client-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-fill);
+  border-radius: 4px;
+  background-color: var(--hero-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-fill);
+}
+
+.client-list-pict {
+  margin: 16px 32px;
+  fill: currentColor;
+}
+
+.client-link:hover,
+.client-link:focus {
+  border-color: 1px var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* footer */
@@ -369,6 +474,57 @@ img {
   margin-bottom: 9px;
 }
 
+.fot-soc-block {
+  display: flex;
+  gap: 70px;
+}
+
+.fot-soc-link {
+  padding-top: 12px;
+}
+.fot-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--hero-color);
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.down-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.down-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--hero-color);
+}
+
+.down-link .down-link-pict {
+  margin: 12px;
+  fill: currentColor;
+}
+
+.down-link:hover,
+.down-link:focus {
+  background-color: var(--accent-color);
+}
+
 .porfolio {
   color: var(--back-midle-color);
   padding-top: 94px;
@@ -405,6 +561,8 @@ img {
 .button-portfolio-item:focus {
   color: var(--back-team-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Examples */
@@ -414,7 +572,11 @@ img {
   flex-wrap: wrap;
   gap: 30px;
 }
-
+.work-item:hover,
+.work-item:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
 .work-list {
   margin-top: 0;
   margin-bottom: 0;
